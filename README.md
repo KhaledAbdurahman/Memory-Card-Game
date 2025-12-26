@@ -1,16 +1,62 @@
-# React + Vite
+# 🧩 React Memory Match
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, interactive **Memory Cards game** built with **React.js**. This project challenges players to find matching pairs of cards while tracking their progress. It’s designed with a focus on smooth state management and responsive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- **Dynamic Shuffling:** Cards are randomized at the start of every game to ensure a unique experience.
+- **Game Logic:** Tracks selected cards, prevents double-clicking the same card, and handles match verification.
+- **Score Tracking:** Keeps a real-time count of the player's total turns/moves.
+- **Responsive Design:** Fully optimized for desktop, tablet, and mobile screens.
+- **Smooth Animations:** CSS-driven card flip transitions and matching effects for a polished feel.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework:** [React.js](https://reactjs.org/)
+- **State Management:** React Hooks (`useState`, `useEffect`, `useCallback`)
+- **Styling:** CSS3 (Flexbox/Grid)
+- **Build Tool:** Vite / Create React App
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ⚙️ Installation & Setup
+
+Follow these steps to get the project running on your local machine:
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone [https://github.com/KhaledAbdurahman/Memory-Card-Game.git]
+    ```
+
+2.  **Navigate to the project folder:**
+
+    ```bash
+    cd Memory-Card-Game
+    ```
+
+3.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+4.  **Start the development server:**
+    ```bash
+    npm run dev
+    ```
+
+---
+
+## 🧠 Core Logic
+
+The game state is managed by comparing two selected card objects. When a user selects two cards:
+
+1.  The `choice` states are updated.
+2.  A `useEffect` hook triggers a comparison check.
+3.  If the attributes match, the `matched` property of the card objects is set to `true`.
+4.  If they don't match, a `setTimeout` delays the flip-back so the player can memorize the positions.
+
+---
